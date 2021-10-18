@@ -1,6 +1,5 @@
 ---
-title: "About"
-author: "Mark Klose"
+title: "About This Website"
 ---
 
-This is a line on the website
+# This is a line on the website
