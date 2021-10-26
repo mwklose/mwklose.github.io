@@ -1,5 +1,0 @@
----
-title: "Homepage"
----
-
-# Website under development
