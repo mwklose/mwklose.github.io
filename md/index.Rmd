@@ -1,35 +1,21 @@
 ---
 title: "Home"
 author: "Mark Klose"
-date: "10/26/2021"
+date: " `r Sys.Date() `"
 output: 
   html_document:
     theme: journal
     toc: true
     toc_float: true
-  
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Welcome!
+My name is Mark Klose (they/them), and I am an Epidemiology PhD Student at the [Gillings School of Public Health](https://sph.unc.edu) at the [University of North Carolina at Chapel Hill](https://www.unc.edu). I work primarily with [Dr. Stephen Cole](https://sph.unc.edu/adv_profile/stephen-r-cole-phd/), [Dr. Jess Edwards](https://sph.unc.edu/adv_profile/jessie-k-edwards-phd/), and [Dr. Paul Zivich](https://pzivich.github.io) on research topics related to causal inference and epidemiological methods. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## How did you make this website?
+This website's code is on [GitHub](https://github.com/mwklose/mwklose.github.io), is written and generated with RMarkdown and RStudio using the [Journal](https://www.datadreaming.org/post/r-markdown-theme-gallery/) theme. I plan for this to hold everything from publications and code to HTML widgets and some of my generative art. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
