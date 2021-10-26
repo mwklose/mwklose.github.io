@@ -1,0 +1,19 @@
+name: "navbar"                                
+output_dir: "."
+navbar:
+  title: "Mark Klose"                            
+  type: inverse
+  right:
+    - text: "Twitter"
+      icon: fa-twitter-square
+      href: https://twitter.com/klose_enough
+    - text: "LinkedIn"
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/mark-klose/                
+    - text: "GitHub"
+      icon: fa-github
+      href: https://github.com/mwklose
+output:
+  html_document:
+    theme: spacelab
+    highlight: textmate
