@@ -4,6 +4,8 @@ navbar:
   title: "Mark Klose"                            
   type: inverse
   left:
+    - text: "Home"
+      href: home.html
     - text: "About"
       href: about.html
   right:
