@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Welcome!
-My name is Mark Klose (they/them), and I am an Epidemiology PhD Student at the [Gillings School of Public Health](https://sph.unc.edu) at the [University of North Carolina at Chapel Hill](https://www.unc.edu). I work primarily with [Dr. Stephen Cole](https://sph.unc.edu/adv_profile/stephen-r-cole-phd/), [Dr. Jess Edwards](https://sph.unc.edu/adv_profile/jessie-k-edwards-phd/), and [Dr. Paul Zivich](https://pzivich.github.io) on research topics related to causal inference and epidemiological methods. 
+My name is Mark Klose, and I am an Epidemiology PhD Student at the [Gillings School of Public Health](https://sph.unc.edu) at the [University of North Carolina at Chapel Hill](https://www.unc.edu). I work primarily with [Dr. Stephen Cole](https://sph.unc.edu/adv_profile/stephen-r-cole-phd/), [Dr. Jess Edwards](https://sph.unc.edu/adv_profile/jessie-k-edwards-phd/), and [Dr. Paul Zivich](https://pzivich.github.io) on research topics related to causal inference and epidemiological methods. 
 
 ## How did you make this website?
 This website's code is on [GitHub](https://github.com/mwklose/mwklose.github.io), is written and generated with RMarkdown and RStudio using the [Journal](https://www.datadreaming.org/post/r-markdown-theme-gallery/) theme. I plan for this to hold everything from publications and code to HTML widgets and some of my generative art. 
