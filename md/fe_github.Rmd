@@ -45,13 +45,17 @@ If this does NOT work for you, there are options to download Git:
 ## Manual Download
 To manually download Git, you can navigate to the [Git Download Site](https://git-scm.com) to download the latest version of Git. Follow the instructions on the downloader to install Git. 
 
-Then go install Homebrew or Chocolatey, because they are super useful and necessary. 
+Then go install Homebrew or Chocolatey, because they are super useful make your life a whole lot easier.  
 
 
 ## Homebrew (MacOS)
 So, to use Homebrew, you [need to have homebrew installed on your computer](https://brew.sh) (and note this is only for MacOS systems). 
 
-Then, to install Git 
+Then, to install Git, you just need to run the following command in the terminal:
+
+```
+brew install git
+```
 
 
 ## Chocolatey (Windows)
