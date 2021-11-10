@@ -8,6 +8,13 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "... for Epidemiologists"
+      menu:
+        - text: "Terminal"
+          href: fe_terminal.html
+        - text: "GitHub"
+          href: fe_github.html
+          
   right:
     - text: "Twitter"
       icon: fa-twitter-square
@@ -18,6 +25,7 @@ navbar:
     - text: "GitHub"
       icon: fa-github
       href: https://github.com/mwklose
+      
 output:
   html_document:
     theme: spacelab

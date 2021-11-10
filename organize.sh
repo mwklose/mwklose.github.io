@@ -1,5 +1,7 @@
 #!/bin/sh
 # Shell script for moving site items to correct location
+Rscript renderSite.R 
+
 if [ -d "md/site_libs" ]
 then
   cp -a md/site_libs/ site_libs/
@@ -16,3 +18,4 @@ then
 else
   echo "no HTML files to move"
 fi
+

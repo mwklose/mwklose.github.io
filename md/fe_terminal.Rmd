@@ -1,5 +1,8 @@
 ---
-title: "About Mark"
+title: "Terminal for Epidemiologists"
+author: "Mark Klose"
+date: "11/10/2021"
+
 output: 
   html_document:
     theme: journal
@@ -7,5 +10,3 @@ output:
     toc_float: true
 ---
 
-# About Mark
-More details to come!
