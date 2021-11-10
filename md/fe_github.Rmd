@@ -10,6 +10,10 @@ output:
     toc_float: true
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 # Why Source Control?
 
 So we can stalk each other's work! 
@@ -23,18 +27,31 @@ Some positives about source control: you get to use the command line and look su
 
 # Step -1: Installing Git {.tabset}
 
-To use Git, we need to have Git installed first.
+To use Git, we need to have Git installed first. A good way to check if you have Git already installed is to open a terminal environment and type:
 
-You have a couple of options to download Git:
+```
+git --version 
+```
+
+which could produce output like:
+```{r version_ex, echo=FALSE}
+cat(system("git --version", intern=TRUE))
+```
+
+
+
+If this does NOT work for you, there are options to download Git:
 
 ## Manual Download
-To manually download Git, you can navigate to the [Git Download Site](https://git-scm.com) to download the latest version of Git. Then go install Homebrew or Chocolatey, because they are super useful and necessary. 
+To manually download Git, you can navigate to the [Git Download Site](https://git-scm.com) to download the latest version of Git. Follow the instructions on the downloader to install Git. 
+
+Then go install Homebrew or Chocolatey, because they are super useful and necessary. 
 
 
 ## Homebrew (MacOS)
 So, to use Homebrew, you [need to have homebrew installed on your computer](https://brew.sh) (and note this is only for MacOS systems). 
 
-
+Then, to install Git 
 
 
 ## Chocolatey (Windows)
