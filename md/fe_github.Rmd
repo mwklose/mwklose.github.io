@@ -61,10 +61,19 @@ brew install git
 ## Chocolatey (Windows)
 So, to use Chocolatey, you [need to have chocolatey installed on your computer](https://chocolatey.org/install) (and note this is only for Windows Users). 
 
+Then, to install Git, you just need to run the following command in the terminal:
+
+```
+choco install git
+```
 
 ## Linux Distributions
 If you're using Linux, then you probably have a distro specific package manager. My suggestion? Google how to install Git with that package manager. You're using Linux, you probably have a good idea about what you are doing. 
 
+Everything is some variation of:
+```
+<package manager> install git
+```
 
 
 # Step 0: Make a Repository
@@ -73,8 +82,69 @@ If you're using Linux, then you probably have a distro specific package manager.
 # Step 1: Clone Repository
  
 
-# Step 2: ```.gitignore``` and more!
+# Step 2: ```.gitignore``` and more! {.tabset}
+A ```.gitignore``` file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a ```.DS_Store``` file, RStudio generates an ```.RData``` file, maybe you keep a set of test credentials in a ```test.credentials``` file, and if they are included in the ```.gitignore``` file, then they would not be added to the staging area (which you will learn abotu soon!). 
 
+To create a ```.gitignore``` file, there are two options. The first is that upon creating a repository, GitHub includes a checkbox to make a file (and includes various templates depending on which programming language is being used). The second option is to manually make the file.
+
+## MacOS
+To create files from the terminal, perform the following command:
+```
+touch .gitignore
+```
+where ```touch``` tells the operating system to create the file if it does not already exist, otherwise, update the last modified time. 
+
+
+Then, to open the file from the command line, perform the following command:
+```
+oepn .gitignore
+```
+which opens the file in the system default editor. 
+
+
+## Windows
+To create files from the terminal, perform the following command:
+```
+touch .gitignore
+```
+where ```touch``` tells the operating system to create the file if it does not already exist, otherwise, update the last modified time. 
+
+
+Then, to open the file from the command line, perform the following command:
+```
+explorer .gitignore
+```
+which opens the file in the system default editor. 
+
+# {.unlisted .unnumbered}
+Within the ```.gitignore``` file, you have a couple of options for what to ignore. 
+
+## Ignore a single file
+Within the ```.gitignore``` file, all you need to add is the filename to ignore it. 
+
+```
+> cat .gitignore
+mark.txt
+names/name1.txt
+```
+would ignore the file called ```mark.txt``` and the file ```name1.txt``` within the ```names``` directory. 
+
+## Ignore a directory of files
+Within the ```.gitignore``` file, all you need to add is the directory of files to ignore it. 
+
+```
+> cat .gitignore
+names/
+```
+would ignore all files within the ```names``` directory, like if ```name1.txt```, ```name2.txt```, and ```name3.txt``` were all present, they would not be added to the staging area. 
+
+## Ignore a file that fits a certain pattern
+Within the ```.gitignore``` file, all you need to add is the add the pattern of files to ignore them. 
+```
+> cat .gitignore
+*.knit.md
+```
+would ignore all intermediary files produced by RMarkdown. 
 
 # Step 3: Add Files to Staging/Tracking Area
 

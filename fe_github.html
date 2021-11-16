@@ -11,7 +11,7 @@
 
 <meta name="author" content="Mark Klose" />
 
-<meta name="date" content="2021-11-10" />
+<meta name="date" content="2021-11-16" />
 
 <title>GitHub for Epidemiologists</title>
 
@@ -376,7 +376,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">GitHub for Epidemiologists</h1>
 <h4 class="author">Mark Klose</h4>
-<h4 class="date">2021-11-10</h4>
+<h4 class="date">2021-11-16</h4>
 
 </div>
 
@@ -409,10 +409,14 @@ div.tocify {
 <div id="chocolatey-windows" class="section level2">
 <h2>Chocolatey (Windows)</h2>
 <p>So, to use Chocolatey, you <a href="https://chocolatey.org/install">need to have chocolatey installed on your computer</a> (and note this is only for Windows Users).</p>
+<p>Then, to install Git, you just need to run the following command in the terminal:</p>
+<pre><code>choco install git</code></pre>
 </div>
 <div id="linux-distributions" class="section level2">
 <h2>Linux Distributions</h2>
 <p>If you’re using Linux, then you probably have a distro specific package manager. My suggestion? Google how to install Git with that package manager. You’re using Linux, you probably have a good idea about what you are doing.</p>
+<p>Everything is some variation of:</p>
+<pre><code>&lt;package manager&gt; install git</code></pre>
 </div>
 </div>
 <div id="step-0-make-a-repository" class="section level1">
@@ -421,8 +425,54 @@ div.tocify {
 <div id="step-1-clone-repository" class="section level1">
 <h1>Step 1: Clone Repository</h1>
 </div>
-<div id="step-2-.gitignore-and-more" class="section level1">
-<h1>Step 2: <code>.gitignore</code> and more!</h1>
+<div id="step-2-.gitignore-and-more" class="section level1 tabset">
+<h1 class="tabset">Step 2: <code>.gitignore</code> and more!</h1>
+<p>A <code>.gitignore</code> file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a <code>.DS_Store</code> file, RStudio generates an <code>.RData</code> file, maybe you keep a set of test credentials in a <code>test.credentials</code> file, and if they are included in the <code>.gitignore</code> file, then they would not be added to the staging area (which you will learn abotu soon!).</p>
+<p>To create a <code>.gitignore</code> file, there are two options. The first is that upon creating a repository, GitHub includes a checkbox to make a file (and includes various templates depending on which programming language is being used). The second option is to manually make the file.</p>
+<div id="macos" class="section level2">
+<h2>MacOS</h2>
+<p>To create files from the terminal, perform the following command:</p>
+<pre><code>touch .gitignore</code></pre>
+<p>where <code>touch</code> tells the operating system to create the file if it does not already exist, otherwise, update the last modified time.</p>
+<p>Then, to open the file from the command line, perform the following command:</p>
+<pre><code>oepn .gitignore</code></pre>
+<p>which opens the file in the system default editor.</p>
+</div>
+<div id="windows" class="section level2">
+<h2>Windows</h2>
+<p>To create files from the terminal, perform the following command:</p>
+<pre><code>touch .gitignore</code></pre>
+<p>where <code>touch</code> tells the operating system to create the file if it does not already exist, otherwise, update the last modified time.</p>
+<p>Then, to open the file from the command line, perform the following command:</p>
+<pre><code>explorer .gitignore</code></pre>
+<p>which opens the file in the system default editor.</p>
+</div>
+</div>
+<div id="section" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p>Within the <code>.gitignore</code> file, you have a couple of options for what to ignore.</p>
+<div id="ignore-a-single-file" class="section level2">
+<h2>Ignore a single file</h2>
+<p>Within the <code>.gitignore</code> file, all you need to add is the filename to ignore it.</p>
+<pre><code>&gt; cat .gitignore
+mark.txt
+names/name1.txt</code></pre>
+<p>would ignore the file called <code>mark.txt</code> and the file <code>name1.txt</code> within the <code>names</code> directory.</p>
+</div>
+<div id="ignore-a-directory-of-files" class="section level2">
+<h2>Ignore a directory of files</h2>
+<p>Within the <code>.gitignore</code> file, all you need to add is the directory of files to ignore it.</p>
+<pre><code>&gt; cat .gitignore
+names/</code></pre>
+<p>would ignore all files within the <code>names</code> directory, like if <code>name1.txt</code>, <code>name2.txt</code>, and <code>name3.txt</code> were all present, they would not be added to the staging area.</p>
+</div>
+<div id="ignore-a-file-that-fits-a-certain-pattern" class="section level2">
+<h2>Ignore a file that fits a certain pattern</h2>
+<p>Within the <code>.gitignore</code> file, all you need to add is the add the pattern of files to ignore them.</p>
+<pre><code>&gt; cat .gitignore
+*.knit.md</code></pre>
+<p>would ignore all intermediary files produced by RMarkdown.</p>
+</div>
 </div>
 <div id="step-3-add-files-to-stagingtracking-area" class="section level1">
 <h1>Step 3: Add Files to Staging/Tracking Area</h1>
