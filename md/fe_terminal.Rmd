@@ -10,3 +10,16 @@ output:
     toc_float: true
 ---
 
+# Listing files at your current location: ```ls```
+
+# Show what files contain:  ```cat```, ```head```
+
+# Change directories: ```cd```
+
+# Make files or directories: ```touch```, ```echo```, ```mkdir```
+
+# Quickly edit a text file: ```vim```, ```emacs```, ```nano```
+
+# Using a package manager
+
+# Running code: ```Rscript```, ```python```

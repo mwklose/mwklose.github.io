@@ -80,10 +80,12 @@ Everything is some variation of:
 
 
 # Step 1: Clone Repository
- 
+ ```
+ git clone <URL from GitHub>
+ ```
 
 # Step 2: ```.gitignore``` and more! {.tabset}
-A ```.gitignore``` file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a ```.DS_Store``` file, RStudio generates an ```.RData``` file, maybe you keep a set of test credentials in a ```test.credentials``` file, and if they are included in the ```.gitignore``` file, then they would not be added to the staging area (which you will learn abotu soon!). 
+A ```.gitignore``` file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a ```.DS_Store``` file, RStudio generates an ```.RData``` file, maybe you keep a set of test credentials in a ```test.credentials``` file, and if they are included in the ```.gitignore``` file, then they would not be added to the staging area (which you will learn about soon!). 
 
 To create a ```.gitignore``` file, there are two options. The first is that upon creating a repository, GitHub includes a checkbox to make a file (and includes various templates depending on which programming language is being used). The second option is to manually make the file.
 
@@ -147,15 +149,57 @@ Within the ```.gitignore``` file, all you need to add is the add the pattern of 
 would ignore all intermediary files produced by RMarkdown. 
 
 # Step 3: Add Files to Staging/Tracking Area
+After changes have been made to files, you need to ultimately ```commit``` them to your repository in order to save the changes "permanently". The first step in this process is to add files that you want to commit to the staging area. 
+
+There are two most commonly used commands for ```add```:
+```
+git add .
+```
+adds all files that have been edited AND do not fit the patterns of the ```.gitignore``` file. 
+
+and 
+```
+git add <filename>
+```
+adds a specific file to the staging area. This is especially useful when first committing a ```.gitignore``` file.
+
+Remember that at this point, you have files that you WANT to commit to your repository, but they are not committed just yet. 
 
 
 # Step 4: Commit to (Local) Repository
+After adding all files you want to commit to your repository, you ```commit``` them to the repository in order to make a permanent snapshot. The files that are ```commit```ted are all the ones in the staging area.
+ 
+ To perform a ```commit```, use the following command:
+ ```
+ git commit -m "Put a meaningful message here"
+ ```
+ The ```-m``` command says "I am including a message with this commit during this step". Otherwise, during the `push` process, it will force you to enter a message using a text editor called Vim (which can be very confusing if you've never used it before). 
 
 
 # Step 5: Push to (Remote) Repository
 
+## Common Issues: {.tabset}
+This is most likely where problems will arise. Some of the most common errors are listed below. 
+
+### Non-fast forward
+Someone else who has access to the remote repository has made a change before you could; you need your repository to look like theirs first. To do this, perform:
+
+```
+git pull
+```
+
+If the message says something about `merge` errors, then check the "Merge Errors" tab. 
+
+### A scary text editor popped up!
+This is most likely from missing the `-m` flag on the ```git commit -m``` step. This text editor is called Vim, and it is 100% navigable by keyboard.
+
+To insert a commit message, press `i` (for insert), then type the message. Once finished, press `ESC` key to get to the Vim command line, then type `:wq` to save and quit. This should solve most problems. 
+
+### Merge Errors
+When pulling data from a remote repository, it is possible that your local code and the remote code are different enough that `git` does not know how to handle the differences. 
+
 
 # Step 6: Repeat Process
-
+After pushing to the remote repository, edit files, `add` them to the staging area, `commit` them to the local repository, then `push` them to the remote repository (with maybe a `pull` operation in between)! If you get stuck, it never hurts to check your ```git status``` to see what files are or are not staged. 
 
 

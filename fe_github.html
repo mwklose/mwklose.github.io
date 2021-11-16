@@ -424,10 +424,11 @@ div.tocify {
 </div>
 <div id="step-1-clone-repository" class="section level1">
 <h1>Step 1: Clone Repository</h1>
+<pre><code>git clone &lt;URL from GitHub&gt;</code></pre>
 </div>
 <div id="step-2-.gitignore-and-more" class="section level1 tabset">
 <h1 class="tabset">Step 2: <code>.gitignore</code> and more!</h1>
-<p>A <code>.gitignore</code> file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a <code>.DS_Store</code> file, RStudio generates an <code>.RData</code> file, maybe you keep a set of test credentials in a <code>test.credentials</code> file, and if they are included in the <code>.gitignore</code> file, then they would not be added to the staging area (which you will learn abotu soon!).</p>
+<p>A <code>.gitignore</code> file allows Git to ignore any unnecessary files that fit a certain pattern. Before running any Git command, the system looks for this file and disregards any matches. For example, the MacOS system sometimes generates a <code>.DS_Store</code> file, RStudio generates an <code>.RData</code> file, maybe you keep a set of test credentials in a <code>test.credentials</code> file, and if they are included in the <code>.gitignore</code> file, then they would not be added to the staging area (which you will learn about soon!).</p>
 <p>To create a <code>.gitignore</code> file, there are two options. The first is that upon creating a repository, GitHub includes a checkbox to make a file (and includes various templates depending on which programming language is being used). The second option is to manually make the file.</p>
 <div id="macos" class="section level2">
 <h2>MacOS</h2>
@@ -476,15 +477,45 @@ names/</code></pre>
 </div>
 <div id="step-3-add-files-to-stagingtracking-area" class="section level1">
 <h1>Step 3: Add Files to Staging/Tracking Area</h1>
+<p>After changes have been made to files, you need to ultimately <code>commit</code> them to your repository in order to save the changes “permanently”. The first step in this process is to add files that you want to commit to the staging area.</p>
+<p>There are two most commonly used commands for <code>add</code>:</p>
+<pre><code>git add .</code></pre>
+<p>adds all files that have been edited AND do not fit the patterns of the <code>.gitignore</code> file.</p>
+<p>and</p>
+<pre><code>git add &lt;filename&gt;</code></pre>
+<p>adds a specific file to the staging area. This is especially useful when first committing a <code>.gitignore</code> file.</p>
+<p>Remember that at this point, you have files that you WANT to commit to your repository, but they are not committed just yet.</p>
 </div>
 <div id="step-4-commit-to-local-repository" class="section level1">
 <h1>Step 4: Commit to (Local) Repository</h1>
+<p>After adding all files you want to commit to your repository, you <code>commit</code> them to the repository in order to make a permanent snapshot. The files that are <code>commit</code>ted are all the ones in the staging area.</p>
+<p>To perform a <code>commit</code>, use the following command: <code>git commit -m "Put a meaningful message here"</code> The <code>-m</code> command says “I am including a message with this commit during this step”. Otherwise, during the <code>push</code> process, it will force you to enter a message using a text editor called Vim (which can be very confusing if you’ve never used it before).</p>
 </div>
 <div id="step-5-push-to-remote-repository" class="section level1">
 <h1>Step 5: Push to (Remote) Repository</h1>
+<div id="common-issues" class="section level2 tabset">
+<h2 class="tabset">Common Issues:</h2>
+<p>This is most likely where problems will arise. Some of the most common errors are listed below.</p>
+<div id="non-fast-forward" class="section level3">
+<h3>Non-fast forward</h3>
+<p>Someone else who has access to the remote repository has made a change before you could; you need your repository to look like theirs first. To do this, perform:</p>
+<pre><code>git pull</code></pre>
+<p>If the message says something about <code>merge</code> errors, then check the “Merge Errors” tab.</p>
+</div>
+<div id="a-scary-text-editor-popped-up" class="section level3">
+<h3>A scary text editor popped up!</h3>
+<p>This is most likely from missing the <code>-m</code> flag on the <code>git commit -m</code> step. This text editor is called Vim, and it is 100% navigable by keyboard.</p>
+<p>To insert a commit message, press <code>i</code> (for insert), then type the message. Once finished, press <code>ESC</code> key to get to the Vim command line, then type <code>:wq</code> to save and quit. This should solve most problems.</p>
+</div>
+<div id="merge-errors" class="section level3">
+<h3>Merge Errors</h3>
+<p>When pulling data from a remote repository, it is possible that your local code and the remote code are different enough that <code>git</code> does not know how to handle the differences.</p>
+</div>
+</div>
 </div>
 <div id="step-6-repeat-process" class="section level1">
 <h1>Step 6: Repeat Process</h1>
+<p>After pushing to the remote repository, edit files, <code>add</code> them to the staging area, <code>commit</code> them to the local repository, then <code>push</code> them to the remote repository (with maybe a <code>pull</code> operation in between)! If you get stuck, it never hurts to check your <code>git status</code> to see what files are or are not staged.</p>
 </div>
 
 
