@@ -170,9 +170,11 @@ Remember that at this point, you have files that you WANT to commit to your repo
 After adding all files you want to commit to your repository, you ```commit``` them to the repository in order to make a permanent snapshot. The files that are ```commit```ted are all the ones in the staging area.
  
  To perform a ```commit```, use the following command:
+ 
  ```
  git commit -m "Put a meaningful message here"
  ```
+ 
  The ```-m``` command says "I am including a message with this commit during this step". Otherwise, during the `push` process, it will force you to enter a message using a text editor called Vim (which can be very confusing if you've never used it before). 
 
 
