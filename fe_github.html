@@ -495,6 +495,20 @@ names/</code></pre>
 </div>
 <div id="step-5-push-to-remote-repository" class="section level1">
 <h1>Step 5: Push to (Remote) Repository</h1>
+<p>Once changes are <code>commit</code>ted to the local repository, the last step is to <code>push</code> them to the remote repository that you are connected to. To do this:</p>
+<pre><code>git push</code></pre>
+<p>And the output looks like some variation of:</p>
+<pre><code>&gt; git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 584 bytes | 584.00 KiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/mwklose/mwklose.github.io.git
+   60b3a67..83d1e20  main -&gt; main</code></pre>
+<p>which means that everything worked according to plan.</p>
 <div id="common-issues" class="section level2 tabset">
 <h2 class="tabset">Common Issues:</h2>
 <p>This is most likely where problems will arise. Some of the most common errors are listed below.</p>
@@ -512,6 +526,14 @@ names/</code></pre>
 <div id="merge-errors" class="section level3">
 <h3>Merge Errors</h3>
 <p>When pulling data from a remote repository, it is possible that your local code and the remote code are different enough that <code>git</code> does not know how to handle the differences.</p>
+</div>
+<div id="git-pull-fast-forward" class="section level3">
+<h3><code>git pull</code>: fast-forward</h3>
+<p>An error I got while updating this page was</p>
+<pre><code>fatal: Not possible to fast-forward, aborting.</code></pre>
+<p>which happens when another repository somehow pushes to the same reference (maybe through another terminal instance, or this repository is inside another repository, etc.).</p>
+<p>To solve this, use the following command instead of <code>git pull</code>:</p>
+<pre><code>git pull --rebase</code></pre>
 </div>
 </div>
 </div>

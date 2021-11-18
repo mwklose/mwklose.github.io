@@ -180,6 +180,29 @@ After adding all files you want to commit to your repository, you ```commit``` t
 
 # Step 5: Push to (Remote) Repository
 
+Once changes are `commit`ted to the local repository, the last step is to `push` them to the remote repository that you are connected to. To do this:
+
+```
+git push
+```
+
+And the output looks like some variation of:
+
+```
+> git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 584 bytes | 584.00 KiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/mwklose/mwklose.github.io.git
+   60b3a67..83d1e20  main -> main
+```
+
+which means that everything worked according to plan. 
+
 ## Common Issues: {.tabset}
 This is most likely where problems will arise. Some of the most common errors are listed below. 
 
@@ -200,6 +223,20 @@ To insert a commit message, press `i` (for insert), then type the message. Once 
 ### Merge Errors
 When pulling data from a remote repository, it is possible that your local code and the remote code are different enough that `git` does not know how to handle the differences. 
 
+### `git pull`: fast-forward
+An error I got while updating this page was
+
+```
+fatal: Not possible to fast-forward, aborting.
+```
+
+which happens when another repository somehow pushes to the same reference (maybe through another terminal instance, or this repository is inside another repository, etc.). 
+
+To solve this, use the following command instead of `git pull`:
+
+```
+git pull --rebase
+```
 
 # Step 6: Repeat Process
 After pushing to the remote repository, edit files, `add` them to the staging area, `commit` them to the local repository, then `push` them to the remote repository (with maybe a `pull` operation in between)! If you get stuck, it never hurts to check your ```git status``` to see what files are or are not staged. 
