@@ -99,7 +99,7 @@ where ```touch``` tells the operating system to create the file if it does not a
 
 Then, to open the file from the command line, perform the following command:
 ```
-oepn .gitignore
+open .gitignore
 ```
 which opens the file in the system default editor. 
 
