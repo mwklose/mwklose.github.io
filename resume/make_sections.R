@@ -15,25 +15,30 @@ make_blurb <- function(infotable, priority=1){
       "### {Value} \n\n",
       "{MoreInfo1}"
     )
-  glue("## Mark Klose {{#title}}",
-       blurb)
+  
+  glue("## Mark Klose {{#title}}\n\n",
+       blurb %>% glue_collapse(), "\n\n")
 }
 
 make_education <- function(infotable, priority=1){
+  # TODO: create/mutate variable for non-repeated sections
+  # TODO: mutate so ending year becomes "Present"
   edu <- infotable %>%
     filter(Priority > priority) %>%
     arrange(desc(End), desc(Start)) %>%
     glue_data(
+      "\n\n",
       "### {ValueLink} \n\n",
       "{MoreInfo1} \n\n",
       "{Location} \n\n", 
+      "{End} - {Start} \n\n",
       "- Courses: {Coursework} \n",
       "- Mentors: {Mentors} \n",
       "- Thesis: {Thesis} \n\n"
     )
   
   glue("## Education {{data-icon=graduation-cap data-concise=true}} \n\n",
-       "{edu}")
+        edu %>% glue_collapse(), "\n\n")
 }
 
 make_research <- function(infotable, priority=1){
