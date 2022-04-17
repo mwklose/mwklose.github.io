@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 )
 
 # Import libraries
-libs <- c("tidyverse", "glue")
+libs <- c("tidyverse", "glue", "stringr")
 # Install libraries if needed
 lapply(libs, function(x){
   # if(!require(x)) install.packages(x, repos = "http://cran.us.r-project.org")
@@ -39,8 +39,6 @@ source("make_sections.R")
 
 Aside
 ================================================================================
-Contact Info {#contact}
---------------------------------------------------------------------------------
 
 ```{r}
 make_contact(info[["contact"]])
@@ -68,48 +66,9 @@ Main
 ```{r}
 make_blurb(info[["blurb"]], priority = 0)
 make_education(info[["education"]])
-```
-
-
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
 make_research(info[["research"]], priority = 0)
+make_prof(info[["work"]], priority=0)
 ```
-
-
-Professional Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-### Data Scientist, intern
-
-SupStat Inc.
-
-Beijing, China
-
-2014
-
-::: concise
-- Taught R language to beginners. 
-- Wrote Shiny app demos.
-- Converted statistical tutorials from SPSS to R language.
-:::
-
-### Bioinformatician
-
-My Health Gene Technology Co., Ltd.
-
-Beijing, China
-
-2015 - 2016
-
-::: concise
-- Analyzed whole-exome sequencing data. 
-- Wrote analysis pipelines of ChIP-seq, single cell DNA-seq and single cell RNA-seq.
-- Studied tumor metastasis and wrote research reports. 
-- Also did case studies to identify the genetic defect causing rare disease.
-:::
 
 
 Teaching Experience {data-icon=chalkboard-teacher}

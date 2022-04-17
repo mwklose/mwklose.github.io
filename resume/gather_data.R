@@ -6,7 +6,7 @@ raw_info <- read_csv(resume_file) %>%
                             paste("[", Value, "](", Link, ")", sep = "")))
 
 # Need to predetermine the sections to make
-sections <- c("blurb", "contact", "education", "skills", "research", "award", "service", "teaching", "paper", "service")
+sections <- c("blurb", "contact", "education", "skills", "research", "award", "service", "teaching", "paper", "service", "work")
 
 # Create an individual table for each subsections, allows for easier referencing. 
 info <- lapply(sections, function(x){
